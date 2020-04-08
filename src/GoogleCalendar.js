@@ -43,7 +43,8 @@ export default class GoogleCalendar extends CalendarBase {
       action: 'TEMPLATE',
       text: this.title,
       details: this.description,
-      location: this.location
+      location: this.location,
+      ctz: this.timezone
     }
     
     let start = formatTime(this.start, FORMAT.FULL)
