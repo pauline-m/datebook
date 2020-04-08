@@ -12,6 +12,7 @@ class CalendarBase {
    * @param {String} options.description - event description
    * @param {String} options.title - event title
    * @param {String} options.location - event location 
+   * @param {String} options.timezone - event timezone
    * @param {String} options.start - event start time
    * @param {String} [options.end] - event end time
    * @param {Object} [options.recurrence]
@@ -29,18 +30,20 @@ class CalendarBase {
   }
   
   /**
-   * Sets the description, title and location.
+   * Sets the description, title and location, timezone.
    * 
    * @private
    * @param {Object} options
    * @param {String} options.description - event description
    * @param {String} options.title - event title
    * @param {String} options.location - event location 
+   * @param {String} options.timezone - event timezone 
    */
   setText (options) {
     this.description = options.description || ''
     this.title = options.title || ''
     this.location = options.location || ''
+    this.timezone = options.timezone || ''
   }
   
   /**
