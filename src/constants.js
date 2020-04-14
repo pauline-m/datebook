@@ -15,5 +15,5 @@ export const FORMAT = {
 export const URL = {
   YAHOO: 'https://calendar.yahoo.com/',
   GOOGLE: 'https://calendar.google.com/calendar/render',
-  OUTLOOK: 'https://outlook.live.com/owa/'
+  OUTLOOK: 'https://outlook.live.com/calendar/action/compose'
 }

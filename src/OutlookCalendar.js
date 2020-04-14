@@ -1,6 +1,7 @@
 import CalendarBase from './CalendarBase'
 import { URL } from './constants'
 import { toQueryString } from './utils/data'
+import moment from 'moment'
 
 /**
  * Generates a an Outlook Calendar url.
@@ -41,11 +42,14 @@ export default class OutlookCalendar extends CalendarBase {
    * @returns {String}
    */
   render () {
+    let _start = moment(this.start).format(moment.HTML5_FMT.DATETIME_LOCAL)
+    let _end = moment(this.end).format(moment.HTML5_FMT.DATETIME_LOCAL)
+
     const params = {
       path: '/calendar/view/Month',
       rru: 'addevent',
-      startdt: this.start,
-      enddt: this.end,
+      startdt: _start,
+      enddt: _end,
       subject: this.title,
       body: this.description,
       location: this.location,
