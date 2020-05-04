@@ -44,14 +44,15 @@ export default class OutlookCalendar extends CalendarBase {
   render () {
     let _start = moment(this.start).format(moment.HTML5_FMT.DATETIME_LOCAL)
     let _end = moment(this.end).format(moment.HTML5_FMT.DATETIME_LOCAL)
-
+    let _description = this.description.substring(0, 1350)
+    
     const params = {
       path: '/calendar/view/Month',
       rru: 'addevent',
       startdt: _start,
       enddt: _end,
       subject: this.title,
-      body: this.description,
+      body: _description,
       location: this.location,
       allday: this.allday
     }

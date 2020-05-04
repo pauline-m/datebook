@@ -39,10 +39,12 @@ export default class GoogleCalendar extends CalendarBase {
    * @returns {String}
    */
   render () {
+    let _description = this.description.substring(0, 5000)
+
     const params = {
       action: 'TEMPLATE',
       text: this.title,
-      details: this.description,
+      details: _description,
       location: this.location,
       ctz: this.timezone
     }
